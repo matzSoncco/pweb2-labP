@@ -1,0 +1,15 @@
+{% extends 'core/base.html' %}
+{% block content %}
+<main class="producto">
+    <section class="tabla">
+        <div class="fila">
+            <div class="columna">
+                <h1 class="nombre_producto">{{ product.name }}</h1>
+                <p class="tipo_producto">{{ product.get_type_id_display }}</p>
+                <p class="precio_producto">Its price is S/.{{ product.price }}</p>
+                <small class="fecha_creacion">Created at {{ product.created }}</small>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock %}

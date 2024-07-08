@@ -1,0 +1,25 @@
+{% extends 'core/base.html' %}
+{% block content %}
+<main class="catalogo">
+    <section class="titulo">
+        <h1 class="productos">Listado de Productos</h1>
+    </section>
+
+    <div class="album">
+        <div class="container">
+            <div class="row">
+                {% for product in products %}
+                <div class="col">
+                    <div class="card">
+                        <div class="card_body">
+                            <h5 class="nombre_producto">{{ product.name }}</h5>
+                            <a href="{% url 'product_detail' product.id %}" class="boton_detalles">Ver detalles del Producto</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

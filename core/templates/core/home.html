@@ -1,0 +1,20 @@
+{% extends 'core/base.html' %}
+{% block content %}
+  <main class="nombre_empresa">
+    <h1>Pastelería Fina</h1>
+
+    {% if request.user.is_authenticated %}
+
+      <p class="lead">{% if request.user.is_authenticated %}Bienvenido {{ user.username | upper }}, {% endif %}. Todos los ingredientes usados en la preparacion de los productos son de la mas alta calidad para los clientes de alta calidada como usted, puede encontrarlos en nuestra tienda. Por ser un nuevo usuario, tendrá un 20% de descuento en su primer compra online !!!</p>
+
+    {% else %}
+
+      <p class="lead">¡Bienvenido a nuestra pastelería fina, donde el arte se une con el sabor para crear experiencias irresistibles! Desde que abrimos nuestras puertas, nos hemos comprometido a ofrecer a nuestros clientes lo mejor en repostería artesanal, utilizando solo los ingredientes más frescos y de la más alta calidad.</p>
+
+    {% endif %}
+
+    <p class="lead">
+      <a href="#" class="acerca">Acerca de Nosotros...</a>
+    </p>
+  </main>
+{% endblock %}
